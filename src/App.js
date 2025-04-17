@@ -1,14 +1,15 @@
 import React, { useState } from "react";
 import { askGPT } from "./services/openai";
+import "./App.css";
+import ReactMarkdown from "react-markdown";
 
 function App() {
   const [messages, setMessages] = useState([]);
   const [input, setInput] = useState("");
 
   const sendMessage = async () => {
-    if (!input) return;
-    const userMsg = { role: "user", content: input };
-    setMessages((msgs) => [...msgs, userMsg]);
+    if (!input.trim()) return;
+    const userMsg = { role: "user", content: input.trim() };
     setInput("");
 
     const reply = await askGPT(input);
@@ -16,19 +17,30 @@ function App() {
   };
 
   return (
-    <div style={{ padding: 20 }}>
-      <h2>Safe Alternatives GPT</h2>
-      <div style={{ minHeight: 300, marginBottom: 20 }}>
+    <div className="app-container">
+      <h2>Old Ways Today</h2>
+
+      <div className="chat-box">
         {messages.map((msg, idx) => (
-          <p key={idx}><strong>{msg.role}:</strong> {msg.content}</p>
+          <div key={idx} className={`message ${msg.role}`}>
+            <strong>{msg.role === "user" ? "You" : "GPT"}:</strong>
+            <ReactMarkdown>{msg.content}</ReactMarkdown>
+          </div>
         ))}
       </div>
+
+      <div className="input-area">
       <input
+        type="text"
         value={input}
         onChange={(e) => setInput(e.target.value)}
+        onKeyDown={(e) => {
+          if (e.key === "Enter") sendMessage();
+        }}
         placeholder="Ask about a product..."
       />
-      <button onClick={sendMessage}>Send</button>
+        <button onClick={sendMessage}>Send</button>
+      </div>
     </div>
   );
 }
