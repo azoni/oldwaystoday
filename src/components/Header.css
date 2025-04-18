@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Open+Sans:wght@400;600&display=swap');
+
+:root {
+  --color-sage: #C7D2C1;
+  --color-cream: #FAF5EF;
+  --color-rose: #DDB7A1;
+  --color-clay: #A88C7D;
+  --color-charcoal: #444444;
+}
+
+.main-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: var(--color-sage);
+  padding: 16px 32px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid var(--color-clay);
+  z-index: 1000;
+}
+
+.site-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem;
+  color: var(--color-charcoal);
+}
+
+.nav-links {
+  display: flex;
+  gap: 24px;
+}
+
+.nav-links a {
+  font-family: 'Open Sans', sans-serif;
+  text-decoration: none;
+  color: var(--color-charcoal);
+  font-weight: 600;
+  transition: color 0.2s ease;
+}
+
+.nav-links a:hover {
+  color: var(--color-rose);
+}
