@@ -2,7 +2,9 @@ const fetch = (...args) => import("node-fetch").then(({ default: fetch }) => fet
 
 exports.handler = async (event) => {
   try {
+    console.log("Received at function:", event);
     const body = JSON.parse(event.body);
+    
 
     const response = await fetch("https://api.openai.com/v1/chat/completions", {
       method: "POST",
