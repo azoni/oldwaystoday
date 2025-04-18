@@ -1,14 +1,4 @@
-import axios from "axios";
-
-export const askGPT = async (userMessage) => {
-  const response = await axios.post(
-    "https://api.openai.com/v1/chat/completions",
-    {
-      model: "gpt-3.5-turbo",
-      messages: [
-        {
-          role: "system",
-          content: `
+const prompt = `
 You are a kind and knowledgeable assistant that helps families find safe, non-toxic, and effective alternatives to common household and personal care products.
 Your goal is to recommend healthier, low-tox options that are practical and accessible. Use a warm and encouraging tone. Structure your answers clearly with generous line breaks for readability.
 
@@ -22,20 +12,26 @@ Also, when possible:
 - Offer traditional or DIY alternatives that were used before mass production and plastic packaging
 - Explain why your recommendations are safer or more thoughtful than conventional products
 
-End responses by offering to explain any suggestion in more detail, including how it compares to mainstream products.`,
-        },
-        {
-          role: "user",
-          content: userMessage,
-        },
-      ],
-    },
-    {
-      headers: {
-        Authorization: `Bearer ${process.env.REACT_APP_OPENAI_API_KEY}`,
-      },
-    }
-  );
+End responses by offering to explain any suggestion in more detail, including how it compares to mainstream products.`
 
-  return response.data.choices[0].message.content;
+export const askGPT = async (userMessage) => {
+  const response = await fetch("/.netlify/functions/proxy-gpt", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      model: "gpt-3.5-turbo",
+      messages: [
+        {
+          role: "system",
+          content: prompt,
+        },
+        { role: "user", content: userMessage },
+      ],
+    }),
+  });
+
+  const data = await response.json();
+  return data.choices?.[0]?.message?.content || "No reply available.";
 };
