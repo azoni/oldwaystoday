@@ -16,6 +16,7 @@ body {
 }
 
 .app-container {
+  padding-top: 120px; /* adjust as needed to sit under fixed header */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -94,3 +95,4 @@ button {
 button:hover {
   background-color: var(--color-rose);
 }
+
