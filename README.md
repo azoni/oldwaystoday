@@ -1,70 +1,115 @@
-# Getting Started with Create React App
+# 🌿 Old Ways Today
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A React-based web app that helps families find non-toxic, traditional, and safe alternatives to modern household products — powered by GPT.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## 🚀 Features
 
-### `npm start`
+- GPT-powered chat assistant (via OpenAI API)  
+- Beautiful, responsive UI with traditional, family-friendly aesthetic  
+- Clean routing between chat and blog pages  
+- Netlify Functions used as a secure proxy for OpenAI calls  
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+---
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 🛠️ Getting Started
 
-### `npm test`
+### 1. Clone the repository
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```bash
+git clone https://github.com/YOUR_USERNAME/oldwaystoday.git
+cd oldwaystoday
+```
 
-### `npm run build`
+### 2. Install dependencies
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```bash
+npm install
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### 3. Install Netlify CLI (if not already)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```bash
+npm install -g netlify-cli
+```
 
-### `npm run eject`
+> This is required to run serverless functions locally.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+---
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## 🔐 Environment Variables
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Create a `.env` file in the root of the project with:
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+```env
+OPENAI_API_KEY=your_openai_api_key_here
+```
 
-## Learn More
+> **Do not commit this file.** This key powers the GPT assistant behind the scenes.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+---
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## 💻 Running the Project Locally
 
-### Code Splitting
+Use Netlify’s dev environment to run both the React app and Netlify Functions:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+```bash
+netlify dev
+```
 
-### Analyzing the Bundle Size
+This will:
+- Start your frontend at `http://localhost:8888`  
+- Auto-handle the `/functions/proxy-gpt` API route  
+- Load your `.env` values properly  
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+> ⚠️ Do **not** use `npm start` — it won’t support the serverless functions.
 
-### Making a Progressive Web App
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## 📂 Project Structure
 
-### Advanced Configuration
+```
+/
+├── src/              # React components and pages  
+│   ├── components/   # Header, reusable UI  
+│   ├── pages/        # Home (chat) and Blog pages  
+│   └── services/     # openai.js for GPT calls  
+├── netlify/functions/
+│   └── proxy-gpt.js  # Secure OpenAI proxy function  
+├── public/  
+├── .env              # Your secret keys (not committed)  
+└── netlify.toml      # Netlify dev settings
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+---
 
-### Deployment
+## 📝 Available Scripts
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+- `netlify dev` – Run app and functions locally (recommended for dev)  
+- `npm install` – Install all frontend dependencies
 
-### `npm run build` fails to minify
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## ✅ Deployment
+
+This app is configured for Netlify. You can deploy it with:
+
+```bash
+netlify deploy --prod
+```
+
+---
+
+## 👥 Contributing
+
+If you're joining the project:
+- Make sure you have an OpenAI API key  
+- Use `netlify dev` for testing locally  
+- Ask Charlton or Jane before changing styling or GPT prompt logic 😊
+
+---
+
+## 📫 Questions?
+
+Reach out to Charlton/Jane or submit an issue.
