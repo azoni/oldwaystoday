@@ -1,24 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Open+Sans:wght@400;600&display=swap');
 
-:root {
-  --color-sage: #C7D2C1;
-  --color-cream: #FAF5EF;
-  --color-rose: #DDB7A1;
-  --color-clay: #A88C7D;
-  --color-charcoal: #444444;
-}
-
 .main-header {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
-  background-color: var(--color-sage);
+  background-color: var(--color-cream-light);
   padding: 16px 32px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 2px solid var(--color-clay);
+  border-bottom: 2px solid var(--color-violet-dark);
   z-index: 1000;
 }
 
@@ -42,5 +34,5 @@
 }
 
 .nav-links a:hover {
-  color: var(--color-rose);
+  color: var(--color-violet-dark);
 }
