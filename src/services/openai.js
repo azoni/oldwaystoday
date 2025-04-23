@@ -1,5 +1,4 @@
 export const askGPT = async (userMessage) => {
-  console.log("Sending to GPT:", userMessage);
 
   const response = await fetch("/.netlify/functions/proxy-gpt", {
     method: "POST",
@@ -11,7 +10,6 @@ export const askGPT = async (userMessage) => {
       messages: userMessage
     }),
   });
-  console.log("userMessage: ", userMessage)
   const data = await response.json();
   return data.choices?.[0]?.message?.content || "No reply available.";
 };
