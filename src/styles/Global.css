@@ -1,8 +1,12 @@
 :root {
     --color-sage: #C7D2C1;
+    --color-sage-light: #d6dfd6;
+    --color-cream-light: #EAE5E0;
+    --color-gray-light: #E0E5EA;
     --color-cream: #FAF5EF;
     --color-rose: #DDB7A1;
     --color-clay: #A88C7D;
+    --color-violet-light: #e7e1e7;
+    --color-violet-dark: #ae86ae;
     --color-charcoal: #444444;
-  }
-  
+    }
