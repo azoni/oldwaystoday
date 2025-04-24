@@ -7,6 +7,7 @@ const Header = () => {
       <div className="site-title">Old Ways Today</div>
       <nav className="nav-links">
         <Link to="/">Search</Link>
+        <Link to="/about">About</Link>
         <Link to="/blog">Blog</Link>
       </nav>
     </header>

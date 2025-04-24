@@ -80,9 +80,11 @@ const Home = () => {
       </div>
       <footer className="site-footer">
         <p>
+        This site contains affiliate links, including Amazon Associate links. As an Amazon Associate, I earn from qualifying purchases.
+        </p><p>
           Products change and AI can make mistakes. Please verify that recommendations meet your needs.
         </p>
-        <p>&copy; {new Date().getFullYear()} YourWebsiteName. All rights reserved.</p>
+        <p>&copy; 2025 Old Ways Today. All rights reserved.</p>
       </footer>
     </div>
   );

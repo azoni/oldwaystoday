@@ -1,0 +1,16 @@
+body .about-container {
+    padding-top: 120px;;
+    max-width: 800px;
+    margin: auto;
+    font-family: 'Open Sans', sans-serif;
+    color: var(--color-charcoal);
+  }
+
+@media (max-width: 600px) {
+  body .about-container {
+    padding-top: 80px;
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+}
+  
