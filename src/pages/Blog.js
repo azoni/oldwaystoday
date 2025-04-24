@@ -41,13 +41,13 @@ const blogPosts = [
     id: "innersense",
     title: "Clean Haircare That Actually Works",
     description: "Salon-quality products without the toxins.",
-    image: "../../public/blogImages/innersensefeature.jpg",
+    image: "public/images/blog/innersensefeature.jpg",
   },
   {
     id: "smoothie",
     title: "Spring Smoothie Recipes",
     description: "Simple clean blends for energy and skin.",
-    image: "../../public/blogImages/innersensefeature.jpg",
+    image: "public/images/blog/innersensefeature.jpg",
   },
 ];
 

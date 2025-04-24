@@ -25,9 +25,11 @@
   }
   
   .post-content h2 {
-    margin-top: 2rem;
-    color: #333;
-    font-size: 1.3rem;
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: var(--color-violet-dark);
+    text-align: center;
   }
   
   .post-content ul,
