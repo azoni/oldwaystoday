@@ -38,17 +38,17 @@ import "./Blog.css";
 
 const blogPosts = [
   {
+    id: "parachutextarget",
+    title: "Natural Fibers: Target x Parachute Linens Collection",
+    description: "Parachute Bedding and Linens at Target coming 4/27!",
+    image: "/images/blog/parachutefeature.jpg",
+  },
+  {
     id: "innersense",
     title: "Clean Haircare That Actually Works",
     description: "Salon-quality products without the toxins.",
     image: "/images/blog/innersensefeature.jpg",
-  },
-  {
-    id: "smoothie",
-    title: "Spring Smoothie Recipes",
-    description: "Simple clean blends for energy and skin.",
-    image: "/images/blog/innersensefeature.jpg",
-  },
+  }
 ];
 
 const Blog = () => (

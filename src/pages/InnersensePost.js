@@ -6,9 +6,9 @@ const InnersensePost = () => {
   const content = (
     <>
       <p>
-        If you’ve tried "natural" shampoos and been disappointed (dry hair, no lather, zero results), I’ve been there. I wanted clean ingredients <em>and</em> salon-level performance — and finally found it in <a href="" target="_blank" rel="noopener noreferrer">Innersense Organic Beauty</a>.
+        If you’ve tried "natural" shampoos and been disappointed (dry hair, no lather, zero results), I’ve been there. I wanted clean ingredients <em>and</em> salon-level performance — and finally found it in <a href="https://amzn.to/4lIJ4fD" target="_blank" rel="noopener noreferrer">Innersense Organic Beauty</a>. Fun fact, this was the AI recommendation that inspired me to create Old Ways Today. I couldn't believe I had never heard of this brand before!!
       </p>
-      <p>After years of buildup from other clean products, the color awakening hairbath was a game changer. It cleaned beatuifully without drying. </p>
+      <p>After years of buildup from other clean products, the color awakening hairbath was a game changer. It cleaned beautifully without drying out my already dry, color-treated hair. </p>
       <h3>🌿 Why It’s Different</h3>
       <ul>
         <li><strong>Truly clean ingredients</strong> — no synthetic fragrance, sulfates, or questionable chemicals</li>
